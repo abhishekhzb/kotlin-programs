@@ -1,0 +1,20 @@
+fun main() {
+    val numbers = listOf(3, 5, 7, 2, 8, 1)
+    val largestNumber = numbers.findLargest()
+    println("The largest number in the list is: $largestNumber")
+}
+
+// Extension function to find the largest number in a list
+fun List<Int>.findLargest(): Int? {
+    if (this.isEmpty()) return null
+    var largest = this[0]
+    for (number in this) {
+        if (number > largest) {
+            largest = number
+        }
+    }
+    return largest
+}
+
+
+
