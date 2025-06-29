@@ -9,25 +9,21 @@ Output:   I ma doog
 */
 
 fun main() {
-    
-    val str = " I am good"
-    val result = reverseString(str)
-    println(result)
-    
+    val input = "I am Good"
+    println(reverseString(input))
 }
 
 fun reverseString(str :String):String{
-    
     val words = str.split(" ")
     var result = ""
     
     for(word in words){
-        var reverseWord = ""
+        var revString = ""
         for(i in word.length-1 downTo 0){
-            reverseWord += word[i]
+           revString = revString + word[i]
         }
-         result += "$reverseWord "
+        result = result+" " + revString
     }
-    
+  
     return result
 }
