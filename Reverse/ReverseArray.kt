@@ -1,20 +1,15 @@
 fun main() {
-    val array = intArrayOf(1, 2, 3, 4, 5)
-    println("Original Array: ${array.joinToString()}")
-
-    reverseArray(array)
-    println("Reversed Array: ${array.joinToString()}")
+    val arr = arrayOf(1,2,3,4,5)
+    println(reverseArray(arr).joinToString())
 }
 
-fun reverseArray(array: IntArray) {
-    var start = 0
-    var end = array.size - 1
-
-    while (start < end) {
-        val temp = array[start]
-        array[start] = array[end]
-        array[end] = temp
-        start++
-        end--
+fun reverseArray(arr: Array<Int>): Array<Int>{
+    val revArray = Array(arr.size){0}
+    var j = 0
+    for(i in arr.size-1 downTo 0){
+        revArray[j] = arr[i]
+        j++
     }
+    
+    return revArray
 }
