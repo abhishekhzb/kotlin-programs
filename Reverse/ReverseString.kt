@@ -1,15 +1,14 @@
 fun main() {
-   val str = "Hello"
-   val revStr = reverseString(str)
-   println(revStr)
+    val input = "HELLO"
+    println(reverseString(input))
 }
 
-fun reverseString(str :String):String{
-    var revStr = ""
-    
-    for(i in str.length - 1 downTo 0){
-        revStr += str[i]
-    }
+fun reverseString(str:String):String{
+    var revString = ""
 
-    return revStr
+    for(i in str.length-1 downTo 0){
+        revString = revString + str[i]     // O L L E H
+    }
+    
+    return revString
 }
