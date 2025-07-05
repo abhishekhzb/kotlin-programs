@@ -1,24 +1,19 @@
 fun main() {
-  val str = "abba"
-  val result =  str.checkApllindrome()
-   if(result){
-      println("Pallindrome")
-   }else{
-      println("Not Pallindrome")
-   } 
+    val str = "wow"
+    val result = checkPalindrome(str)
+
+    if (result) {
+        println("Palindrome")
+    } else {
+        println("Not Palindrome")
+    }
 }
 
-fun String.checkApllindrome():Boolean{
+fun checkPalindrome(str :String): Boolean {
     var revStr = ""
-    val str = this
-   
-    for(i in str.length-1 downTo 0){
+    for (i in str.length - 1 downTo 0) {
         revStr += str[i]
     }
-    
-    if(str==revStr){
-        return true
-    }else{
-        return false
-    }
+
+    return str == revStr
 }
