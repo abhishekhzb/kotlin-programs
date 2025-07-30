@@ -21,3 +21,20 @@ fun countCharacter(str:String):HashMap<Char,Int>{
     
     return map
 }
+
+---------------------------------------------------------
+
+fun main() {
+    val str = "Abhishek Kumar"
+    val result = countCharacters(str)
+    println(result)
+}
+
+fun countCharacters(input: String): Map<Char, Int> {
+    return input
+        .lowercase()
+        .filter { it != ' ' }
+        .groupingBy { it }
+        .eachCount()
+}
+
