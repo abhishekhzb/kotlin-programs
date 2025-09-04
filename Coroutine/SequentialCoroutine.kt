@@ -21,3 +21,33 @@ fun main() {
 
     println("Main coroutine: End")
 }
+
+...............................................
+
+import kotlinx.coroutines.*
+
+suspend fun api1(): String {
+    delay(1000)
+    return "API 1"
+}
+
+suspend fun api2(): String {
+    delay(1000)
+    return "API 2"
+}
+
+suspend fun api3(): String {
+    delay(1000)
+    return "API 3"
+}
+
+fun main() = runBlocking {
+    val result1 = api1()
+    val result2 = api2()
+    val result3 = api3()
+
+    println(result1)
+    println(result2)
+    println(result3)
+}
+
