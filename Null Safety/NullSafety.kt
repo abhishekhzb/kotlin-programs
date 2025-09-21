@@ -1,22 +1,59 @@
-🔑 Null Handling in Kotlin
+1️⃣ Nullable Type (?)
+Allows a variable to store either a value or null.
 
-1️⃣ Nullable Type (?) → variable can hold null.
-👉 Example: var name: String? = null → Output: null
+fun main() {
+    var name: String? = null
+    println(name)  // Output: null
+}
 
-2️⃣ Safe Call (?.) → safely access property, returns null if value is null.
-👉 Example: name?.length → Output: null
+2️⃣ Safe Call (?.)
+Safely accesses a property/method, returns null instead of crashing if the object is null.
 
-3️⃣ Elvis Operator (?:) → provide default value if null.
-👉 Example: name?.length ?: 0 → Output: 0
+fun main() {
+    val name: String? = null
+    println(name?.length)  // Output: null
+}
 
-4️⃣ Non-null Assertion (!!) → force access, throws NPE if null.
-👉 Example: name!!.length → Caught NullPointerException
+3️⃣ Elvis Operator (?:)
+Provides a default value if the expression on the left is null.
 
-5️⃣ Safe Casting (as?) → safely cast object, returns null if not possible.
-👉 Example: obj as? String → Output: 13
+fun main() {
+    val name: String? = null
+    println(name?.length ?: 0)  // Output: 0
+}
 
-6️⃣ Smart Cast (if != null) → compiler auto-casts inside null check.
-👉 Example: if (name != null) println(name.length) → Output: skipped since null
+4️⃣ Non-null Assertion (!!)
+Forces Kotlin to treat a variable as non-null. Throws NullPointerException if it is null.
+
+fun main() {
+    val name: String? = null
+    try {
+        println(name!!.length)
+    } catch (e: NullPointerException) {
+        println("Caught NullPointerException")  // Output: Caught NullPointerException
+    }
+}
+
+5️⃣ Safe Casting (as?)
+Tries to cast an object safely. Returns null instead of throwing an exception if the cast fails.
+
+fun main() {
+    val obj: Any = 13
+    val str: String? = obj as? String
+    println(str)  // Output: null
+}
+
+6️⃣ Smart Cast (if != null)
+Inside a null check, Kotlin automatically treats the variable as non-null.
+
+fun main() {
+    val name: String? = null
+    if (name != null) {
+        println(name.length)
+    } else {
+        println("Skipped since null")  // Output: Skipped since null
+    }
+}
 .................................................................................
 
 fun main() {
